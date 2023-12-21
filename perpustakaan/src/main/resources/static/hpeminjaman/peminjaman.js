@@ -41,12 +41,13 @@ $(document).ready( function () {
 
 $(document).ready(function () {
     $('#submitBtn').on('click', function () {
+    	
         // Mendapatkan nilai dari textbox
-    	$('#idTextbox').val(data.id);
-	    $('#namaTextbox').val(data.nama);
-	    $('#judulTextbox').val(data.judul);
-	    $('#tanggalPeminjamanTextbox').val(data.tanggal_peminjaman);
-	    $('#tanggalPengembalianTextbox').val(data.tanggal_pengembalian);
+    	var idValue = $('#idTextbox').val();
+	    var namaValue = $('#namaTextbox').val();
+	    var judulValue = $('#judulTextbox').val();
+	    var tanggalPeminjamanValue = $('#tanggalPeminjamanTextbox').val();
+	    var tanggalPengembalianValue = $('#tanggalPengembalianTextbox').val();
 	    
         var apiUrl = 'http://localhost:8080/peminjaman/' + idValue;
 
@@ -70,7 +71,7 @@ $(document).ready(function () {
                 success: function (data) {
                     console.log('POST request successful', data);
                     // Lakukan sesuatu setelah permintaan berhasil
-                    window.location.href = '../front/anggota';
+                    window.location.href = '../front/peminjaman';
                 },
                 error: function (error) {
                     console.error('Error in POST request', error);
@@ -87,7 +88,7 @@ $(document).ready(function () {
                 success: function (data) {
                     console.log('PUT request successful', data);
                     // Lakukan sesuatu setelah permintaan berhasil
-                    window.location.href = '../front/anggota';
+                    window.location.href = '../front/peminjaman';
                 },
                 error: function (error) {
                     console.error('Error in PUT request', error);
