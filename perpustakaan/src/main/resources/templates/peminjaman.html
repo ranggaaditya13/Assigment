@@ -1,18 +1,24 @@
 <!DOCTYPE html>
 <html html xmlns="http://www.w3.org/1999/xhtml" 
-    xmlns:th="http://www.thymeleaf.org" 
-    xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
-    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+    xmlns:th="http://www.thymeleaf.org" >
 <head>
 	<meta charset="utf-8" />
 	<title>Spring Boot + JPA + Datatables</title>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css">
-	<script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css">
+    <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
 	<script src="../hpeminjaman/peminjaman.js"></script>
 </head>
+
+  <style>
+        /* Menambahkan sedikit margin */
+        .textbox-container {
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+    </style>
 
 <body>
 	<h1>Table Peminjaman</h1>
@@ -44,6 +50,38 @@
         </tfoot>
     </table>
     
+    
+         <div class="container">
+   		<h2>Edit/Add</h2>
+        <!-- Kotak untuk setiap textbox -->
+        <div class="row">
+            <div class="col-md-2">
+                <label for="idTextbox">Id:</label>
+                <input type="text" id="idTextbox" disabled />
+            </div>
+            <div class="col-md-2">
+                <label for="namaTextbox">Nama:</label>
+                <input type="text" id="namaTextbox" disabled/>
+            </div>
+            <div class="col-md-2">
+                <label for="judulTextbox">Judul:</label>
+                <input type="text" id="judulTextbox" disabled/>
+            </div>
+            <div class="col-md-2">
+                <label for="tanggalPeminjamanTextbox">Tanggal Peminjaman:</label>
+                <input type="text" id="tanggalPeminjamanTextbox" />
+            </div>
+            <div class="col-md-2">
+                <label for="tanggalPengembalianTextbox">Tanggal Pengembalian:</label>
+                <input type="text" id="tanggalPengembalianTextbox" />
+            </div>
+            <div class="row">
+            <div class="col-md-2">
+                <button id="submitBtn" class="btn btn-primary">Submit</button>
+            </div>
+        </div>
+        </div>
+    </div>
     	
     
 </body>

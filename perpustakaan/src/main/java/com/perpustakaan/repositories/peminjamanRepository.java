@@ -15,3 +15,4 @@ public interface peminjamanRepository extends JpaRepository<peminjamanModel, Lon
 	@Query(value = "select peminjaman.id,anggota.nama, buku.judul,tanggal_peminjaman,tanggal_pengembalian,denda_keterlambatan from peminjaman join buku on peminjaman.id_buku = buku.id join anggota on peminjaman.id_anggota = anggota.id",nativeQuery = true)
 	List<Map<String, Object>> listPeminjaman();
 }
+ 
